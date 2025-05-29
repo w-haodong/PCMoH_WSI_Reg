@@ -7,9 +7,11 @@ Precise registration of high-resolution Whole Slide Images (WSIs) is crucial for
 
 Detail the steps:
 1. Run reg_with_PCMoH_gui.py, which has an interface to manually pass in an image for registration, as follows:
+
 ![image](https://github.com/user-attachments/assets/3521fc0c-c821-4c42-895c-b9ea10cf18ee)
 
 1. To view the resulting image, double-click on the resulting image, as follows:
+
 ![image](https://github.com/user-attachments/assets/9adba50c-f239-4c03-92a2-f452b9533a95)
 
 ![image](https://github.com/user-attachments/assets/68403f08-6c37-4dc4-8b94-3f59143b4ba5)
