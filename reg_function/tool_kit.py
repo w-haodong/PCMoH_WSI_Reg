@@ -655,52 +655,6 @@ def generate_grid(tensor : tc.Tensor=None, tensor_size: tc.Tensor=None, device: 
     grid = F.affine_grid(identity_transform, tensor_size, align_corners=False)
     return grid
 
-def warp_landmarks(df_grid, landmarks, affined_landmarks):
-    temp_landmarks = landmarks.copy()
-    df_grid_np = df_grid.detach().clone().cpu().numpy()[0]
-    H, W, _ = df_grid_np.shape
-
-    # 处理变形场的方向和缩放
-    df_grid_np[:, :, 0] = (df_grid_np[:, :, 0] + 1) * (W / 2)
-    df_grid_np[:, :, 1] = (df_grid_np[:, :, 1] + 1) * (H / 2)
-
-    count_error = 0
-    matched_coordinates = []
-    fw_value = 0.5
-    max_fw_add = 5  # 最大的fw_add值
-
-    # 对每个 landmarks 坐标，查找 df_grid_np 中匹配的 X 和 Y 坐标
-    for lm_i in range(len(landmarks)):
-        x_val, y_val = landmarks[lm_i, :2]
-        fw_add = 0.5
-        found_match = False
-
-        while fw_add <= max_fw_add:
-            fw_max = fw_value + fw_add
-            matches = np.where(((df_grid_np[..., 0] <= (x_val + fw_max)) &
-                                (df_grid_np[..., 0] >= (x_val - fw_max)) &
-                                (df_grid_np[..., 1] <= (y_val + fw_max)) &
-                                (df_grid_np[..., 1] >= (y_val - fw_max))))
-
-            if len(matches[0]) > 0:
-                mat_lm_x = np.mean(matches[1])
-                mat_lm_y = np.mean(matches[0])
-                found_match = True
-                break
-
-            fw_add += 1
-
-        if not found_match:
-            mat_lm_x = affined_landmarks[lm_i, 0]
-            mat_lm_y = affined_landmarks[lm_i, 1]
-            count_error += 1
-
-        matched_coordinates.append([mat_lm_x, mat_lm_y])
-
-    matched_coordinates = np.array(matched_coordinates)
-    temp_landmarks[:, :2] = matched_coordinates
-    return temp_landmarks
-
 def current_timestamp():
     """
     获取当前日期和时间，并格式化为 "YYYYMMDD_HHMMSS" 格式的字符串。
