@@ -10,11 +10,13 @@ Detail the steps:
 
 ![image](https://github.com/user-attachments/assets/3521fc0c-c821-4c42-895c-b9ea10cf18ee)
 
-1. To view the resulting image, double-click on the resulting image, as follows:
+2. To view the resulting image, double-click on the resulting image, as follows:
 
 ![image](https://github.com/user-attachments/assets/9adba50c-f239-4c03-92a2-f452b9533a95)
 
 ![image](https://github.com/user-attachments/assets/68403f08-6c37-4dc4-8b94-3f59143b4ba5)
+
+The datasets are from ANHIR 2019 (https://anhir.grand-challenge.org/) and ACROBAT 2023 (https://acrobat.grand-challenge.org/).
 
 
 
