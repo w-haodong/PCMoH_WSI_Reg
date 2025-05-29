@@ -17,7 +17,9 @@ Detail the steps:
 ![image](https://github.com/user-attachments/assets/68403f08-6c37-4dc4-8b94-3f59143b4ba5)
 
 The datasets are from ANHIR 2019 (https://anhir.grand-challenge.org/) and ACROBAT 2023 (https://acrobat.grand-challenge.org/).
-If you don't like the hassle of downloading, we also provide 10 sets of data from different stains, complex impurities, structures, etc. Where the former test_01-05 is the ANHIR dataset and test_06-10 is the ACROBAT dataset.
+If you don't like the hassle of downloading, we also provide 10 sets of data from different stains, complex impurities, structures, etc. Where the former test_01-05 is the ANHIR dataset and test_06-10 is the ACROBAT dataset. The link is as follows：
+通过网盘分享的文件：img_test
+链接: https://pan.baidu.com/s/1_SxXKS_1yK4_G9Xf7vWFsg?pwd=i27w 提取码: i27w 
 
 
 
